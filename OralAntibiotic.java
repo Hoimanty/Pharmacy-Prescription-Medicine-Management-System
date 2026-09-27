@@ -13,7 +13,6 @@ public class OralAntibiotic extends Antibiotic {
 
     public String getForm() { return form; }
 
-
     public void displayInfo() {
         System.out.println(this + " | Prescription Required: Yes | Dosage: " + getDosageInstruction()
                 + " | Class: " + getAntibioticClass() + " | Course: " + getCourseDurationDays()

@@ -17,4 +17,3 @@ public class ColdMedicine extends OTCMedicine {
                 + " | Minimum Age: " + getMinimumAge());
     }
 }
-

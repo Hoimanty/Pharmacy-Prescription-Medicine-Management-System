@@ -1,4 +1,3 @@
-
 public class Supplement extends OTCMedicine {
 
     private String supplementType;
@@ -15,4 +14,3 @@ public class Supplement extends OTCMedicine {
         System.out.println(this + " | Prescription Required: No | Type: " + supplementType);
     }
 }
-

@@ -1,4 +1,5 @@
-public class InjectableAntibiotic extends Antibiotic{
+public class InjectableAntibiotic extends Antibiotic {
+
     private String injectionRoute;
     private boolean requiresRefrigeration;
 
@@ -15,13 +16,11 @@ public class InjectableAntibiotic extends Antibiotic{
 
     public String getInjectionRoute() { return injectionRoute; }
     public boolean isRequiresRefrigeration() { return requiresRefrigeration; }
+
     public void displayInfo() {
         System.out.println(this + " | Prescription Required: Yes | Dosage: " + getDosageInstruction()
                 + " | Class: " + getAntibioticClass() + " | Course: " + getCourseDurationDays()
                 + " days | Route: " + injectionRoute
                 + " | Refrigeration required: " + (requiresRefrigeration ? "Yes" : "No"));
     }
-
-
-
 }

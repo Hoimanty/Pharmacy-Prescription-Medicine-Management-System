@@ -1,4 +1,5 @@
-public class ControlledMedicine extends PrescriptionMedicine{
+public class ControlledMedicine extends PrescriptionMedicine {
+
     private String controlledSubstanceSchedule;
     private int maxRefillsAllowed;
 
@@ -10,15 +11,16 @@ public class ControlledMedicine extends PrescriptionMedicine{
         this.controlledSubstanceSchedule = controlledSubstanceSchedule;
         this.maxRefillsAllowed = maxRefillsAllowed;
     }
+
     public String getControlledSubstanceSchedule() { return controlledSubstanceSchedule; }
     public int getMaxRefillsAllowed() { return maxRefillsAllowed; }
 
     public boolean isRefillAllowed(int refillsUsed) {
         return refillsUsed < maxRefillsAllowed;
     }
+
     public void displayInfo() {
         System.out.println(this + " | Prescription Required: Yes | Dosage: " + getDosageInstruction()
                 + " | Schedule: " + controlledSubstanceSchedule + " | Max Refills: " + maxRefillsAllowed);
     }
-
 }

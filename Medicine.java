@@ -1,4 +1,5 @@
 public abstract class Medicine {
+
     private String medicineId;
     private String name;
     private String manufacturer;
@@ -6,37 +7,33 @@ public abstract class Medicine {
     private int stockQuantity;
     private String expiryDate;
     private int minimumAge;
-    public Medicine(String med, String n, String man,
-                    double p, int s, String exp) {
-        medicineId=med;
-        name=n;
-        manufacturer=man;
-        price=p;
-        stockQuantity=s;
-        expiryDate=exp;
+    public Medicine(String medicineId, String name, String manufacturer,
+                    double price, int stockQuantity, String expiryDate) {
+        this(medicineId, name, manufacturer, price, stockQuantity, expiryDate, 0);
     }
-    public Medicine(String med, String n, String man,
-                    double p, int s, String exp,int age) {
-        medicineId=med;
-        name=n;
-        manufacturer=man;
-        price=p;
-        stockQuantity=s;
-        expiryDate=exp;
-        minimumAge=age;
+    public Medicine(String medicineId, String name, String manufacturer,
+                    double price, int stockQuantity, String expiryDate, int minimumAge) {
+        this.medicineId = medicineId;
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+        this.expiryDate = expiryDate;
+        this.minimumAge = minimumAge;
     }
-    public abstract void display();
+    public abstract void displayInfo();
 
-    public boolean isAvailable (int qty){
-        return stockQuantity >=qty;
+    public boolean isAvailable(int qty) {
+        return stockQuantity >= qty;
     }
-    public void updateStock(int qty){
+
+    public void updateStock(int qty) {
         stockQuantity -= qty;
     }
+
     public boolean isAgeEligible(int customerAge) {
         return customerAge >= minimumAge;
     }
-
     public String getMedicineId() { return medicineId; }
     public String getName() { return name; }
     public String getManufacturer() { return manufacturer; }
@@ -44,7 +41,6 @@ public abstract class Medicine {
     public int getStockQuantity() { return stockQuantity; }
     public String getExpiryDate() { return expiryDate; }
     public int getMinimumAge() { return minimumAge; }
-
 
     public void setPrice(double price) { this.price = price; }
     public void setStockQuantity(int stockQuantity) { this.stockQuantity = stockQuantity; }
@@ -56,4 +52,3 @@ public abstract class Medicine {
                 name, medicineId, manufacturer, stockQuantity, price, expiryDate);
     }
 }
-

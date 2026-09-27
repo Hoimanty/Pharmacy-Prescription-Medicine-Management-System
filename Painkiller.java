@@ -1,5 +1,6 @@
-public class Painkiller extends OTCMedicine{
-    private String activeIngredient; // Paracetamol / Ibuprofen
+public class Painkiller extends OTCMedicine {
+
+    private String activeIngredient;
     private int maxDailyDosageMg;
 
     public Painkiller(String medicineId, String name, String manufacturer,
@@ -9,8 +10,10 @@ public class Painkiller extends OTCMedicine{
         this.activeIngredient = activeIngredient;
         this.maxDailyDosageMg = maxDailyDosageMg;
     }
+
     public String getActiveIngredient() { return activeIngredient; }
     public int getMaxDailyDosageMg() { return maxDailyDosageMg; }
+
     public void displayInfo() {
         System.out.println(this + " | Prescription Required: No | Ingredient: " + activeIngredient
                 + " | Max Daily Dosage: " + maxDailyDosageMg + " mg");
