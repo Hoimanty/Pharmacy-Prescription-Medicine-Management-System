@@ -1,4 +1,6 @@
 public interface Trackable {
     String getTrackingId();
-    void sendNotification(Customer customer, String message);
+    default void sendNotification(String message) {
+        System.out.println("[NOTIFY -> " + getTrackingId() + "] " + message);
+    }
 }
