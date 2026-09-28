@@ -1,0 +1,49 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Customer implements Trackable{
+
+    private String customerId;
+    private String name;
+    private String phone;
+    private int age;
+    private List<String> notifications;
+    public Customer(String customerId, String name, String phone) {
+        this(customerId, name, phone, 0);
+    }
+    public Customer(String customerId, String name, String phone, int age) {
+        this.customerId = customerId;
+        this.name = name;
+        this.phone = phone;
+        this.age = age;
+        this.notifications = new ArrayList<>();
+    }
+public String getTrackingId() {
+        return "CUST-" + customerId;
+}
+
+public void sendNotification(String message) {
+    notifications.add(message);
+    Trackable.super.sendNotification(message);
+}
+
+    public List<String> getNotifications() {
+        return notifications;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public int getAge() {
+        return age;
+    }
+    public String toString() {
+        return name + " (" + customerId + "), age " + age + ", " + phone;
+    }
+}
