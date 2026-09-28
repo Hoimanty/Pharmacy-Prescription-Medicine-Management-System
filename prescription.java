@@ -46,7 +46,7 @@ public class Prescription {
     }
 
     public void recordDispense(int qty) {
-        pillsDispensed += qty:
+        pillsDispensed += qty;
     }
 
     public int getPillsDispensed() { 
